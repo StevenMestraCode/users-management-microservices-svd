@@ -2,12 +2,12 @@ services:
   mysql:
     image: mysql:8.4
     environment:
-      MYSQL_DATABASE: crud_usuarios
+      MYSQL_DATABASE: usuarios_db
       MYSQL_USER: users_app
       MYSQL_PASSWORD: local_users_password
       MYSQL_ROOT_PASSWORD: local_root_password
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql-data:/var/lib/mysql
       - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro

@@ -3,11 +3,11 @@
 -- Gestión de Usuarios - Arquitectura Hexagonal
 -- =============================================
 
-CREATE DATABASE IF NOT EXISTS crud_usuarios
+CREATE DATABASE IF NOT EXISTS usuarios_db
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE crud_usuarios;
+USE usuarios_db;
 
 CREATE TABLE IF NOT EXISTS users (
     id          VARCHAR(36)  NOT NULL PRIMARY KEY,
@@ -30,4 +30,14 @@ VALUES (
     'ADMIN',
     'ACTIVE'
 );
-
+CREATE TABLE IF NOT EXISTS empleos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    categoria VARCHAR(255),
+    area_trabajo VARCHAR(255),
+    empresa VARCHAR(255),
+    nivel VARCHAR(50),
+    sueldo DOUBLE,
+    funciones TEXT,
+    cargo_jefe VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
